@@ -6,9 +6,9 @@
 
 ## 最新版本
 
-- 版本：`0.6.1`（`versionCode 9`）
-- [版本记录](https://github.com/xmz28/ninebot_pro/releases/tag/v0.6.1)
-- [下载正式版 APK](https://github.com/xmz28/ninebot_pro/releases/download/v0.6.1/ninebot-pro-release-v0.6.1.apk)
+- 版本：`0.6.2`（`versionCode 10`）
+- [版本记录](https://github.com/xmz28/ninebot_pro/releases/tag/v0.6.2)
+- [下载正式版 APK](https://github.com/xmz28/ninebot_pro/releases/download/v0.6.2/ninebot-pro-release-v0.6.2.apk)
 - 包名：`com.example.ninebotpro`
 - 系统要求：Android 8.0 或更新版本
 
@@ -42,6 +42,14 @@
 6. 图片、视频和手机屏幕投屏可以在后台继续，摄像头投屏在 App 离开前台后停止，视频声音在手机播放。点击「停止」结束画面发送，点击「断开」结束 P2P 连接。
 
 更多操作步骤可在「关于 → 使用说明」查看。
+
+## App 内更新
+
+从 v0.6.2 起，可在「关于 → 检查更新」手动检查，也可在 App 前台使用时收到新版本提醒。自动检查每 24 小时进行一次，连接或投屏时会延后。检查和下载需要手机能够访问 GitHub。
+
+发现新版时，可选择「现在更新」「此版本不再提醒」或「下次再说」。「此版本不再提醒」只跳过当前版本，手动检查仍可看到它。「下次再说」会推迟提醒 24 小时。
+
+确认下载后，App 会校验 APK 的完整性、包名、版本和签名，并打开 Android 安装器。首次使用时，系统可能要求允许 Ninebot Pro 安装应用。通过正式签名版覆盖升级可保留已保存的仪表配置。v0.6.1 用户请先从本页下载并手动安装一次。
 
 ## 常见问题
 
