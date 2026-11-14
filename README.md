@@ -1,5 +1,7 @@
 # Ninebot Pro
 
+[![platform: Android 8.0+](https://img.shields.io/badge/platform-Android%208.0%2B-blue)](#安装与使用) [![connection: Wi-Fi Direct](https://img.shields.io/badge/connection-Wi--Fi%20Direct-blue)](#投屏原理) [![Release](https://img.shields.io/github/v/release/xmz28/ninebot_pro?label=release)](https://github.com/xmz28/ninebot_pro/releases/latest)
+
 通过 Wi-Fi Direct 将相册图片、视频、摄像头或手机屏幕投到兼容的九号仪表。本仓库用于分发 Android APK。
 
 ## 最新版本
