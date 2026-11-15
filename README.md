@@ -2,15 +2,32 @@
 
 [![platform: Android 8.0+](https://img.shields.io/badge/platform-Android%208.0%2B-blue)](#安装与使用) [![connection: Wi-Fi Direct](https://img.shields.io/badge/connection-Wi--Fi%20Direct-blue)](#投屏原理) [![Release](https://img.shields.io/github/v/release/xmz28/ninebot_pro?label=release)](https://github.com/xmz28/ninebot_pro/releases/latest)
 
-通过 Wi-Fi Direct 将相册图片、视频、摄像头或手机屏幕投到兼容的九号仪表。本仓库用于分发 Android APK。
+通过 Wi-Fi Direct 将相册图片、视频、摄像头或手机屏幕投到兼容的九号仪表。本仓库提供 Android APK 和 iOS 预览版 IPA。
 
-## 最新版本
+## Android 正式版
 
 - 版本：`0.6.2`（`versionCode 10`）
 - [版本记录](https://github.com/xmz28/ninebot_pro/releases/tag/v0.6.2)
 - [下载正式版 APK](https://github.com/xmz28/ninebot_pro/releases/download/v0.6.2/ninebot-pro-release-v0.6.2.apk)
 - 包名：`com.example.ninebotpro`
 - 系统要求：Android 8.0 或更新版本
+
+## iOS 预览版
+
+- 版本：`1.0.0`（构建号 `1`）
+- 系统要求：iOS / iPadOS 17.0 或更新版本，ARM64
+- Bundle ID：`com.hanlin.ninebotpro`
+- 安装包：`NinebotPro.ipa`（约 381 KiB），[下载 IPA](https://github.com/xmz28/ninebot_pro/releases/download/ios-v1.0.0/NinebotPro.ipa) · [预发布说明](https://github.com/xmz28/ninebot_pro/releases/tag/ios-v1.0.0)
+- 签名状态：未签名。需要使用符合 Apple 要求的签名与安装方式，才能安装到设备。签名和实机安装仍待验证。
+
+### iOS 安装与使用
+
+1. 下载 IPA 后按所用签名方式安装。采用注册设备分发时，请先用有效证书和包含目标设备的描述文件签名，再按 Apple 的流程安装。 [Apple 注册设备分发说明](https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices/)
+2. 在仪表开启投屏模式，然后到 iPhone 或 iPad 的「设置 → Wi-Fi」手动连接仪表网络。连接后打开 Ninebot Pro，按系统提示允许访问本地网络。
+3. 在 App 内确认仪表地址和投屏配置，可先尝试「测试图」。此包可见相册图片、视频、摄像头和 OpenXPlay CarPlay 视频流入口，实际兼容性以设备验证为准。
+4. 五寸使用 H.264，画面通过 UDP 5012 发送，UDP 5013 用于 RTCP 控制。4.3 寸 JPEG 为实验功能。七寸 KCP 与系统屏幕录制尚未在这份 IPA 中验证，暂未列入支持范围。
+
+以下预设、P2P 扫描和 App 内更新说明适用于 Android 版。
 
 ## 投屏预设
 
