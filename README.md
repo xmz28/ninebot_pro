@@ -2,7 +2,7 @@
 
 [![platform: Android 8.0+](https://img.shields.io/badge/platform-Android%208.0%2B-blue)](#安装与使用) [![connection: Wi-Fi Direct](https://img.shields.io/badge/connection-Wi--Fi%20Direct-blue)](#投屏原理) [![Release](https://img.shields.io/github/v/release/xmz28/ninebot_pro?label=release)](https://github.com/xmz28/ninebot_pro/releases/latest)
 
-通过 Wi-Fi Direct 将相册图片、视频、摄像头或手机屏幕投到兼容的九号仪表。本仓库提供 Android APK 和 iOS 预览版 IPA。
+通过 Wi-Fi Direct 将相册图片、视频、摄像头或手机屏幕投到兼容的九号仪表。本仓库提供 Android APK 和 iOS IPA。
 
 ## Android 正式版
 
@@ -12,12 +12,12 @@
 - 包名：`com.example.ninebotpro`
 - 系统要求：Android 8.0 或更新版本
 
-## iOS 预览版
+## iOS 正式版
 
 - 版本：`1.0.0`（构建号 `1`）
 - 系统要求：iOS / iPadOS 17.0 或更新版本，ARM64
 - Bundle ID：`com.hanlin.ninebotpro`
-- 安装包：`NinebotPro.ipa`（约 381 KiB），[下载 IPA](https://github.com/xmz28/ninebot_pro/releases/download/ios-v1.0.0/NinebotPro.ipa) · [预发布说明](https://github.com/xmz28/ninebot_pro/releases/tag/ios-v1.0.0)
+- 安装包：`NinebotPro.ipa`（约 381 KiB），[下载 IPA](https://github.com/xmz28/ninebot_pro/releases/download/ios-v1.0.0/NinebotPro.ipa) · [发布说明](https://github.com/xmz28/ninebot_pro/releases/tag/ios-v1.0.0)
 - 签名状态：未签名。需要使用符合 Apple 要求的签名与安装方式，才能安装到设备。签名和实机安装仍待验证。
 
 ### iOS 安装与使用
