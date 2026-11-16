@@ -14,18 +14,26 @@
 
 ## iOS 正式版
 
-- 版本：`1.0.0`（构建号 `1`）
+- 版本：`1.0.1`（构建号 `2`）
 - 系统要求：iOS / iPadOS 17.0 或更新版本，ARM64
 - Bundle ID：`com.hanlin.ninebotpro`
-- 安装包：`NinebotPro.ipa`（约 381 KiB），[下载 IPA](https://github.com/xmz28/ninebot_pro/releases/download/ios-v1.0.0/NinebotPro.ipa) · [发布说明](https://github.com/xmz28/ninebot_pro/releases/tag/ios-v1.0.0)
-- 签名状态：未签名。需要使用符合 Apple 要求的签名与安装方式，才能安装到设备。签名和实机安装仍待验证。
+- 安装包：`ninebot-pro-ios-v1.0.1-unsigned.ipa`（约 2.78 MiB），[下载未签名 IPA](https://github.com/xmz28/ninebot_pro/releases/download/ios-v1.0.1/ninebot-pro-ios-v1.0.1-unsigned.ipa) · [发布说明与校验信息](https://github.com/xmz28/ninebot_pro/releases/tag/ios-v1.0.1)
+- 签名状态：未签名，需使用自己的有效证书和描述文件自行签名安装；不能直接安装，也不是 App Store / TestFlight 版本。
+
+### iOS 本版更新
+
+优化首页投屏卡片、连接状态、关于页和设置入口；新增 iOS 更新提醒及下载入口；统一应用图标，改进配置取消和视频进度操作。CarPlay 使用通用服务文案，接收应用需提供兼容 OXP 接口；未新增其他协议支持，也未将 CarWithin、CarCast 列为已验证兼容。
 
 ### iOS 安装与使用
 
-1. 下载 IPA 后按所用签名方式安装。采用注册设备分发时，请先用有效证书和包含目标设备的描述文件签名，再按 Apple 的流程安装。 [Apple 注册设备分发说明](https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices/)
-2. 在仪表开启投屏模式，然后到 iPhone 或 iPad 的「设置 → Wi-Fi」手动连接仪表网络。连接后打开 Ninebot Pro，按系统提示允许访问本地网络。
-3. 在 App 内确认仪表地址和投屏配置，可先尝试「测试图」。此包可见相册图片、视频、摄像头和 OpenXPlay CarPlay 视频流入口，实际兼容性以设备验证为准。
-4. 五寸使用 H.264，画面通过 UDP 5012 发送，UDP 5013 用于 RTCP 控制。4.3 寸 JPEG 为实验功能。七寸 KCP 与系统屏幕录制尚未在这份 IPA 中验证，暂未列入支持范围。
+1. 下载 IPA，用自己的有效证书与描述文件签名，再通过所用工具安装。签名有效期及续签方式取决于实际签名渠道。[Apple 注册设备分发说明](https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices/)
+2. 建议保留 Bundle ID；如签名工具修改 Bundle ID，App 内更新可能无法匹配元数据，请从 GitHub 手动下载新版后重新签名安装。
+3. 在仪表开启投屏模式，到 iPhone 或 iPad 的“设置 → Wi-Fi”手动连接仪表网络。返回 App，按提示允许本地网络访问，并核对仪表预设和地址。
+4. 选择相册图片、视频、摄像头或 CarPlay。可先在“诊断与日志”投送测试图；CarPlay 地址与端口以接收应用的服务设置为准。
+5. 五寸使用 H.264，4.3 寸 JPEG 为实验功能。七寸 KCP 与跨 App 系统屏幕录制不在本版支持范围内。
+6. “关于 → 检查更新”可查看 iOS 新版本，提醒后打开下载页面；下载 IPA 后仍需自行签名。Release 包没有调试预览入口。
+
+本包已完成 Release 构建、包体元数据及 ZIP 完整性核验。同源开发签名版本此前已在 iPhone 17 Pro Max 安装并获用户确认；最终未签名 IPA 未对所有第三方自签工具做端到端安装验证。
 
 以下预设、P2P 扫描和 App 内更新说明适用于 Android 版。
 
