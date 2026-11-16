@@ -35,6 +35,14 @@
 
 本包已完成 Release 构建、包体元数据及 ZIP 完整性核验。同源开发签名版本此前已在 iPhone 17 Pro Max 安装并获用户确认；最终未签名 IPA 未对所有第三方自签工具做端到端安装验证。
 
+## iOS 界面预览
+
+以下为 iOS 1.0.1 模拟器截图，CarPlay 服务地址仅为示例。
+
+| 首页与内容选择 | CarPlay 服务配置 | 关于与更新入口 |
+| --- | --- | --- |
+| <img src="docs/screenshots/ios-home.png" alt="iOS 首页：连接仪表与选择投屏内容" width="260"> | <img src="docs/screenshots/ios-carplay.png" alt="CarPlay 配置：服务地址与兼容接口说明" width="260"> | <img src="docs/screenshots/ios-about.png" alt="关于页：版本、使用说明与检查更新" width="260"> |
+
 以下预设、P2P 扫描和 App 内更新说明适用于 Android 版。
 
 ## 投屏预设
