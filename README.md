@@ -2,10 +2,10 @@
 
 # Ninebot Pro
 
-**把手机里的画面，带到九号仪表上。**
+**把手机里的画面，带到兼容的九号和台铃仪表上。**
 
-[![Android 0.6.2](https://img.shields.io/badge/Android-0.6.2-2E7D32?style=flat-square)](https://github.com/xmz28/ninebot_pro/releases/tag/v0.6.2)
-[![iOS 1.0.1](https://img.shields.io/badge/iOS-1.0.1-1565C0?style=flat-square)](https://github.com/xmz28/ninebot_pro/releases/tag/ios-v1.0.1)
+[![Android 1.0.0](https://img.shields.io/badge/Android-1.0.0-2E7D32?style=flat-square)](https://github.com/xmz28/ninebot_pro/releases/tag/v1.0.0)
+[![iOS 1.0.2](https://img.shields.io/badge/iOS-1.0.2-1565C0?style=flat-square)](https://github.com/xmz28/ninebot_pro/releases/tag/v1.0.0)
 [![仪表 Wi-Fi 投屏](https://img.shields.io/badge/连接-仪表_Wi--Fi-546E7A?style=flat-square)](#平台差异)
 
 Android 和 iOS 都能把照片、视频和摄像头画面投到仪表上。Android 还支持手机屏幕投屏，iOS 可接入兼容 OXP 的 CarPlay 视频流。
@@ -18,8 +18,8 @@ Android 和 iOS 都能把照片、视频和摄像头画面投到仪表上。Andr
 
 | 平台与版本 | 系统要求 | 下载入口 | 安装方式 |
 | --- | --- | --- | --- |
-| **Android 0.6.2** | Android 8.0+ | [下载 APK](https://github.com/xmz28/ninebot_pro/releases/download/v0.6.2/ninebot-pro-release-v0.6.2.apk) · [发布说明](https://github.com/xmz28/ninebot_pro/releases/tag/v0.6.2) | 同签名版本可覆盖升级 |
-| **iOS 1.0.1** | iOS / iPadOS 17.0+，ARM64 | [下载 IPA](https://github.com/xmz28/ninebot_pro/releases/download/ios-v1.0.1/ninebot-pro-ios-v1.0.1-unsigned.ipa) · [发布说明](https://github.com/xmz28/ninebot_pro/releases/tag/ios-v1.0.1) | 需自行签名安装 |
+| **Android 1.0.0** | Android 8.0+ | [下载 APK](https://github.com/xmz28/ninebot_pro/releases/download/v1.0.0/ninebot-pro-release-v1.0.0.apk) · [发布说明](https://github.com/xmz28/ninebot_pro/releases/tag/v1.0.0) | 同签名版本可覆盖升级 |
+| **iOS 1.0.2** | iOS / iPadOS 16.0+，ARM64 | [下载 IPA](https://github.com/xmz28/ninebot_pro/releases/download/v1.0.0/ninebot-pro-ios-v1.0.2-unsigned.ipa) · [发布说明](https://github.com/xmz28/ninebot_pro/releases/tag/v1.0.0) | 需自行签名安装 |
 
 - **Android**：用同签名的 APK 覆盖升级可保留配置。如果之前装的是不同签名的版本，请先卸载旧版。卸载会清除该版配置。
 - **iOS**：下载 IPA 后，请用自己的证书和描述文件签名。签名时建议保留原 Bundle ID，便于 App 检查更新。
@@ -28,7 +28,7 @@ Android 和 iOS 都能把照片、视频和摄像头画面投到仪表上。Andr
 
 ## 界面预览
 
-iOS 1.0.1 模拟器截图
+以下为 iOS 1.0.1 的界面示意，新版布局和服务地址以 App 为准。
 
 | 首页与内容选择 | CarPlay 服务配置 | 关于与更新入口 |
 | --- | --- | --- |
@@ -41,67 +41,79 @@ iOS 1.0.1 模拟器截图
 | 连接仪表 | App 内扫描 Wi-Fi Direct，可重连上次仪表 | 在系统设置中手动连接仪表 Wi-Fi |
 | 相册图片、视频、摄像头 | 支持 | 支持 |
 | 手机屏幕投屏 | 支持 | 当前不支持跨 App 屏幕录制 |
-| CarPlay 视频流 | 手机屏幕投屏，无 OXP 直连入口 | 直接接入兼容 OXP 接口的视频流 |
-| 仪表预设 | 五寸；七寸待实测；4.3 寸为测试功能 | 五寸；4.3 寸为实验功能；不支持七寸 KCP |
-| App 更新 | 下载并校验 APK，由系统确认安装 | 打开新版下载页，下载后需重新自行签名 |
+| CarPlay 视频流 | 手机屏幕投屏，无 OXP 直连入口 | 试验性接入兼容 OXP 接口的视频流 |
+| 仪表预设 | 九号五寸；九号七寸（测试）；台铃 4.3 寸；九号 4.3 寸暂时停用 | 九号 5 寸、台铃 4.3 寸（TL-DASH-V2） |
+| App 更新 | 下载并校验 APK，由系统确认安装 | 在 App 内下载、校验并分享 IPA，再自行签名 |
 
 两端摄像头均需在前台使用：Android 离开前台后停止摄像头投屏；iOS 进入后台后暂停采集、保留最后画面。图片、视频等来源的后台运行取决于平台设置及系统状态。视频声音在手机播放。
 
-iOS 的 CarPlay 投屏需要接收应用提供 OXP `/oxp/v0` 接口和 H.264 视频流，仪表只显示画面。
+iOS 的 CarPlay 投屏为试验性功能。接收应用须提供 OXP `/oxp/v0` 接口和 H.264 视频流。默认服务地址使用 HTTP、端口 `9888`，仪表只显示画面。
 
 ## 开始使用
 
 ### Android
 
 1. 在仪表或官方 App 开启投屏，打开手机 Wi-Fi，并按提示授权。Android 13+ 需要附近 Wi-Fi 权限；Android 12 及以下需要精确定位权限，并在扫描时开启系统定位。
-2. 点击“扫描 P2P”，选择仪表并按系统提示确认。连接后核对“投屏配置”；App 会记住仪表配置，并尝试重连上次成功核对的仪表。
+2. 点击“扫描 P2P”，选择九号或台铃仪表并按系统提示确认。台铃候选名称为 `TL-DASH-` 加六位十六进制字符；新设备自动推荐“台铃 4.3 寸”配置，已有保存配置优先。连接后核对“投屏配置”，必要时手动选择模式、分辨率、帧率和画质并保存。App 会尝试重连上次成功核对的仪表。
 3. 选择“相册媒体”“摄像头”或“手机屏幕”。相机和屏幕采集需按系统提示授权。
 4. 点击“停止”结束投屏，点击“断开”结束 P2P 连接。
 
 ### iOS / iPadOS
 
 1. 完成 IPA 自签安装，在仪表开启投屏，再到“设置 → Wi-Fi”手动连接仪表网络。
-2. 返回 App，允许本地网络访问，刷新并核对仪表地址与预设。可在“诊断与日志”中先投送测试图。
-3. 选择相册图片、视频或摄像头。使用 CarPlay 时，先在兼容接收应用中启动服务，再填写其服务地址和端口。
+2. 返回 App，允许本地网络访问，在首页「仪表配置」选择九号 5 寸或台铃 4.3 寸。通常使用预设地址，需要修改时展开「高级连接设置」。可在“诊断与日志”中先投送测试图。
+3. 选择相册图片、视频或摄像头，视频默认循环播放。使用 CarPlay 时，先在兼容接收应用中启动服务，再填写其服务地址和端口。
 4. 在“画面设置”中调整画面参数，在“后台继续投屏”中选择后台行为；点击“停止投屏”结束。
 
 更多操作步骤可在 App 的“关于 → 使用说明”中查看。
 
 ## 检查更新
 
-打开“关于 → 检查更新”可手动查看新版本。App 也会在前台空闲时每隔 24 小时检查一次。
+打开“关于 → 检查更新”可手动查看新版本，也可在版本记录中查看历史版本与更新说明。App 会在前台空闲时每隔 24 小时检查一次。
 
 - **稍后提醒**：推迟 24 小时；“此版本不再提醒”只跳过当前版本，手动检查仍可看到它。
 - **Android**：下载后校验 APK 的 SHA-256、包名、版本和签名，再打开系统安装器。首次使用可能需要允许安装应用。同签名版本覆盖升级可保留配置；0.6.1 用户需先手动安装一次较新版本。
-- **iOS**：点击“前往下载”打开对应发布页，下载 IPA 后仍需自行签名安装。
+- **iOS**：新版可下载并校验 IPA，下载后可分享给签名工具或保存到「文件」。安装仍需自行签名。
 
 ## 仪表与传输
 
-五寸 848×480 预设已在 KZ110 仪表上验证。七寸预设待实测，4.3 寸目前为测试功能。
+九号 5 寸 848×480 预设已在 KZ110 仪表上验证。Android 台铃 4.3 寸已验证图片、视频、摄像头和手机屏幕，包含停止重启、来源切换及约五分钟视频连续播放。其他台铃型号和固件需独立验证；九号七寸仍为测试功能。
 
 ### Android 仪表预设与传输原理
 
 | 仪表 | 分辨率 | 编码与传输 | 默认帧率 | 默认码率或画质 |
 | --- | --- | --- | --- | --- |
-| 五寸（默认） | 848×480 | H.264 / RTP | 20 FPS | 2000 kbps |
-| 七寸（待实测） | 1024×600 | H.264 / KCP | 25 FPS | 2000 kbps |
-| 4.3 寸（测试） | 480×272 | JPEG / RTP | 10 FPS | JPEG 质量 80 |
+| 九号五寸（默认） | 848×480 | H.264 / RTP | 20 FPS | 2000 kbps |
+| 九号七寸（测试） | 1024×600 | H.264 / KCP | 25 FPS | 2000 kbps |
+| 台铃 4.3 寸 | 480×272 | JPEG / TCP | 20 FPS | JPEG 质量 80 |
 
 **连接。** Android 通过 Wi-Fi Direct 加入仪表 P2P 组，以完整设备名称和 MAC 匹配目标，组网后核对组主身份，核对通过才开放投屏。手机已有其他 P2P 连接时，会保留连接并提示手动选择。
 
-**画面处理。** 手机将来源画面缩放、旋转，再编码分包。视频走 UDP 5012，RTCP 控制与保活走 UDP 5013。
+**画面处理。** 手机将来源画面缩放、旋转，再编码发送。九号视频走 UDP 5012，RTCP 控制与保活走 UDP 5013；台铃使用独立 TCP 控制会话与 JPEG 视频通道。表内为新配置默认值，旧配置保留用户参数；实际帧率取决于来源、手机和仪表请求速度。
 
 - 五寸使用 H.264，按仪表使用的 RTP 格式直接发送。
 - 七寸在 H.264 / RTP 外增加 KCP，由接收端确认驱动重传。抓包中的视频为 1024×600，标称 25 FPS。
-- 4.3 寸逐帧压缩 JPEG，再切片发送。每帧可独立解码，可调整 JPEG 质量。
+- 台铃 4.3 寸按仪表请求发送完整 JPEG，每帧可独立解码，可调整 JPEG 质量。本次设备无需连接蓝牙即可投屏。
+- 九号 4.3 寸入口暂时关闭，不能选作台铃预设。
 
 配置按仪表保存。“完整”保留整幅画面，“裁满”裁掉超出部分，“拉伸”改变画面比例。用过旧七寸配置的用户，请重新选择七寸预设并保存，以启用 KCP。
+
+### iOS 仪表预设
+
+| 仪表 | 默认分辨率 | 编码与传输 | 默认帧率 |
+| --- | --- | --- | --- |
+| 九号 5 寸 | 848×480 | H.264 / RTP（UDP） | 30 FPS |
+| 台铃 4.3 寸 | 480×272 | JPEG / TCP | 20 FPS |
+
+iOS 台铃预设已在一台 TL-DASH-V2 上连续流畅投屏约三分钟，仍偶发低帧或拉帧超时；停止后用同一来源重开有时可恢复。其他台铃型号待验证。iOS 16 实机运行待补测。九号 4.3 寸旧预设已移除。
 
 ## 常见问题
 
 **扫不到仪表？** Android 可打开设备列表中的“全部”，并检查投屏模式和扫描权限。如果仪表被其他手机占用，先在原手机断开。iOS 需要先在系统 Wi-Fi 设置中手动连接。
 
-**连接成功但没有画面？** 先核对仪表尺寸和预设，再试投测试图。Android 七寸仪表请选择带 KCP 的预设。
+**连接成功但没有画面？** 先核对品牌、尺寸和预设，再试投测试图。Android 台铃 4.3 寸使用 JPEG / TCP，九号七寸使用 H.264 / KCP（测试）。连接成功或发送帧增加仍需结合仪表实际画面判断。
+
+**iOS 台铃投屏只有一两帧或停在一帧？** 可先在 App 内停止投屏，再用相同来源重开。若重开后仍低帧或超时，可在「诊断与日志」导出日志。
 
 **七寸日志显示“尚无回应”？** 当前 Android 版尚未识别七寸样本中的 24 字节控制回复。请结合实际画面判断，可导出日志排查。
 
@@ -113,4 +125,4 @@ iOS 的 CarPlay 投屏需要接收应用提供 OXP `/oxp/v0` 接口和 H.264 视
 
 [抖音主页](https://v.douyin.com/x64M2NbYj0A/) · [全部发布记录](https://github.com/xmz28/ninebot_pro/releases)
 
-Android 七寸传输使用 [KCP](https://github.com/skywind3000/kcp)，许可证随 APK 提供。
+Android 七寸传输使用 [KCP](https://github.com/skywind3000/kcp)，更新说明解析使用 [CommonMark Java](https://github.com/commonmark/commonmark-java)，许可证随 APK 提供。
