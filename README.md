@@ -134,6 +134,6 @@ iOS 台铃预设已在一台 TL-DASH-V2 上连续流畅投屏约三分钟，仍�
 
 如果 Ninebot Pro 对你有帮助，欢迎请我喝杯咖啡。赞赏完全自愿，下载、使用和更新照常。
 
-[关注作者（抖音）](https://v.douyin.com/x64M2NbYj0A/) · [支持项目（支付宝 / 微信）](https://github.com/xmz28/support/blob/main/README.zh-CN.md) · [全部发布记录](https://github.com/xmz28/ninebot_pro/releases)
+[关注作者（抖音）](https://v.douyin.com/x64M2NbYj0A/) · [支持项目（支付宝 / 微信）](https://github.com/xmz28/support) · [全部发布记录](https://github.com/xmz28/ninebot_pro/releases)
 
 Android 七寸传输使用 [KCP](https://github.com/skywind3000/kcp)，更新说明解析使用 [CommonMark Java](https://github.com/commonmark/commonmark-java)，许可证随 APK 提供。

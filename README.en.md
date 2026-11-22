@@ -126,6 +126,6 @@ iOS Tailing projection ran smoothly for around three minutes on one TL-DASH-V2, 
 
 If Ninebot Pro has been useful to you, you're welcome to buy me a coffee. Contributions are entirely optional. Downloads, features, and updates are available to everyone.
 
-[Follow the author on Douyin](https://v.douyin.com/x64M2NbYj0A/) · [Support the project (Alipay / WeChat)](https://github.com/xmz28/support) · [All releases](https://github.com/xmz28/ninebot_pro/releases)
+[Follow the author on Douyin](https://v.douyin.com/x64M2NbYj0A/) · [Support the project (Alipay / WeChat)](https://github.com/xmz28/support/blob/main/README.en.md) · [All releases](https://github.com/xmz28/ninebot_pro/releases)
 
 Android 7-inch transport uses [KCP](https://github.com/skywind3000/kcp); release-note parsing uses [CommonMark Java](https://github.com/commonmark/commonmark-java). Their licenses are included with the APK.
