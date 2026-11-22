@@ -2,6 +2,8 @@
 
 # Ninebot Pro
 
+**简体中文** · [English](README.en.md)
+
 **把手机里的画面，带到兼容的九号和台铃仪表上。**
 
 [![Android 1.0.0](https://img.shields.io/badge/Android-1.0.0-2E7D32?style=flat-square)](https://github.com/xmz28/ninebot_pro/releases/tag/v1.0.0)
