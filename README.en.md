@@ -2,12 +2,12 @@
 
 # Ninebot Pro
 
-**Bring your phone's content to compatible Ninebot and Tailing instrument displays.**
+**Bring your phone's content to compatible Ninebot, Tailing and Zeeho instrument displays.**
 
 **English** · [简体中文](README.md)
 
-[![Android 1.0.0](https://img.shields.io/badge/Android-1.0.0-2E7D32?style=flat-square)](https://github.com/xmz28/ninebot_pro/releases/tag/v1.0.0)
-[![iOS 1.0.2](https://img.shields.io/badge/iOS-1.0.2-1565C0?style=flat-square)](https://github.com/xmz28/ninebot_pro/releases/tag/v1.0.0)
+[![Android 1.0.1](https://img.shields.io/badge/Android-1.0.1-2E7D32?style=flat-square)](https://github.com/xmz28/ninebot_pro/releases/tag/v1.0.1)
+[![iOS 1.0.3](https://img.shields.io/badge/iOS-1.0.3-1565C0?style=flat-square)](https://github.com/xmz28/ninebot_pro/releases/tag/v1.0.1)
 [![Instrument Wi-Fi](https://img.shields.io/badge/connection-instrument_Wi--Fi-546E7A?style=flat-square)](#platform-comparison)
 
 Android and iOS can send photos, videos and camera images to the instrument. Android also supports phone screen mirroring. iOS can receive a CarPlay video stream from a compatible OXP service.
@@ -20,8 +20,8 @@ Android and iOS can send photos, videos and camera images to the instrument. And
 
 | Platform | Requirement | Download | Installation |
 | --- | --- | --- | --- |
-| **Android 1.0.0** | Android 8.0+ | [APK](https://github.com/xmz28/ninebot_pro/releases/download/v1.0.0/ninebot-pro-release-v1.0.0.apk) · [Release notes](https://github.com/xmz28/ninebot_pro/releases/tag/v1.0.0) | Upgrade over an APK signed with the same key |
-| **iOS 1.0.2** | iOS / iPadOS 16.0+, ARM64 | [IPA](https://github.com/xmz28/ninebot_pro/releases/download/v1.0.0/ninebot-pro-ios-v1.0.2-unsigned.ipa) · [Release notes](https://github.com/xmz28/ninebot_pro/releases/tag/v1.0.0) | Sign and install it yourself |
+| **Android 1.0.1** | Android 8.0+ | [APK](https://github.com/xmz28/ninebot_pro/releases/download/v1.0.1/ninebot-pro-release-v1.0.1.apk) · [Release notes](https://github.com/xmz28/ninebot_pro/releases/tag/v1.0.1) | Upgrade over an APK signed with the same key |
+| **iOS 1.0.3** | iOS / iPadOS 16.0+, ARM64 | [IPA](https://github.com/xmz28/ninebot_pro/releases/download/v1.0.1/ninebot-pro-ios-v1.0.3-unsigned.ipa) · [Release notes](https://github.com/xmz28/ninebot_pro/releases/tag/v1.0.1) | Sign and install it yourself |
 
 - **Android:** An upgrade signed with the same key keeps settings. Uninstall a differently signed version first; uninstalling removes its settings.
 - **iOS:** Sign the downloaded IPA with your own certificate and provisioning profile. Keeping the original Bundle ID is recommended for update checks.
@@ -44,7 +44,8 @@ These illustrations show iOS 1.0.1. Refer to the app for current layout and serv
 | Photos, videos, camera | Supported | Supported |
 | Phone screen mirroring | Supported | Cross-app screen capture is not currently supported |
 | CarPlay stream | Via phone screen mirroring; no OXP entry | Experimental compatible OXP video input |
-| Instrument presets | Ninebot 5-inch; Ninebot 7-inch (test); Tailing 4.3-inch; Ninebot 4.3-inch disabled | Ninebot 5-inch and Tailing 4.3-inch (TL-DASH-V2) |
+| Instrument presets | Ninebot 5-inch, Ninebot 7-inch (experimental), Tailing 4.3-inch and Zeeho AE4 MAX2+ 6.2-inch | Ninebot 5-inch, Tailing 4.3-inch (TL-DASH-V2) and Zeeho AE4 MAX2+ 6.2-inch |
+| Zeeho wallpaper | Pick two photos and review crop previews before uploading | Pick a portrait photo and a landscape photo, then upload |
 | App updates | Download and verify APK, then confirm system installation | Download, verify and share IPA for self-signing |
 
 Camera capture requires the foreground on both platforms. Android stops camera projection in the background; iOS pauses capture and retains the last frame. Background behavior for photos and video depends on platform settings and system state. Video audio plays on the phone.
@@ -56,14 +57,15 @@ iOS CarPlay projection is experimental. The receiving app must expose an OXP `/o
 ### Android
 
 1. Enable projection on the instrument or in its official app. Enable phone Wi-Fi and grant the requested permissions. Android 13+ requires nearby Wi-Fi permission; Android 12 and earlier require precise location permission and system location enabled for scanning.
-2. Tap **Scan P2P**, choose the instrument and follow system prompts. Tailing candidates are named `TL-DASH-` followed by six hexadecimal characters. New devices get a recommended Tailing 4.3-inch configuration; an existing saved configuration takes precedence. Check the projection profile after connecting, adjust and save if needed. The app attempts to reconnect to the last successfully verified instrument.
+2. Select an instrument profile, tap **Scan P2P**, choose the instrument and follow the system prompts. Enable **All** to show all discovered Wi-Fi Direct devices. After connecting, adjust and save picture settings for the current instrument if needed.
 3. Choose gallery media, camera or phone screen. Grant camera or screen capture permission when prompted.
 4. Tap **Stop** to end projection and **Disconnect** to end the P2P connection.
+5. For Zeeho wallpaper, tap **Set wallpaper**, pick a portrait photo and a landscape photo, review the crops, then upload. Opening this screen stops active projection.
 
 ### iOS / iPadOS
 
 1. Sign and install the IPA, enable instrument projection, then manually join the instrument network under **Settings → Wi-Fi**.
-2. Return to the app, allow local network access and select Ninebot 5-inch or Tailing 4.3-inch under **Instrument configuration**. Defaults usually work; expand advanced connection settings to change the address. A test image is available in diagnostics and logs.
+2. Return to the app, allow local network access and select the matching Ninebot, Tailing or Zeeho preset under **Instrument configuration**. Expand advanced connection settings to change the address if needed.
 3. Select a photo, video or camera. Video loops by default. For CarPlay, start an OXP-compatible receiving service first and enter its address and port.
 4. Adjust display parameters and background behavior in settings. Tap **Stop projection** when finished.
 
@@ -99,6 +101,8 @@ The Ninebot 5-inch 848×480 preset was verified on a KZ110. Android Tailing 4.3-
 - The Ninebot 4.3-inch entry is disabled and cannot be selected as a Tailing preset.
 
 Profiles are saved per instrument. **Fit** preserves the full picture, **Fill** crops, and **Stretch** changes its proportions. Users of an old 7-inch profile should reselect and save the 7-inch preset to enable KCP.
+
+On both platforms, the Zeeho AE4 MAX2+ 6.2-inch preset uses 1024×480 H.264 over TCP at 25 FPS by default. Projection and wallpaper were verified on this model. Other Zeeho models and firmware need separate testing.
 
 ### iOS instrument presets
 
